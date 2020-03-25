@@ -1,13 +1,25 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+VAGRANTFILE_API_VERSION = "2"
+
+ENV['VAGRANT_NO_PARALLEL'] = 'yes'
+
 Vagrant.configure("2") do |config|
+
   config.vm.box = "ubuntu/xenial64"
-  config.vm.network "private_network", ip: "192.168.33.10"
+
   config.vm.provider "virtualbox" do |vb|
-    vb.memory = "8056"
+    vb.memory = "8192"
     vb.cpus = 4
-    config.vm.provider :virtualbox do |vb|
-        vb.name = "spinnaker"
-    end
   end
-  config.vm.provision "shell", path: "install-spinnaker.sh"
+
+  config.vm.define "spinnaker.local" do |c|
+    c.vm.hostname = "spinnaker.local"
+    c.vm.network "private_network", ip: "192.168.0.21"
+    c.vm.provision "shell", path: "bootstrap.sh"
+    c.vm.provision "shell", path: "install-spinnaker.sh"
+  end
+  
   # config.disksize.size = '30GB'
 end

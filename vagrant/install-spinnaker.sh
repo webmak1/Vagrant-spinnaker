@@ -13,7 +13,9 @@ sudo mkswap /swapfile
 echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
 sudo swapon /swapfile
 
-SPINNAKER_VERSION=1.17.5
+# https://www.spinnaker.io/community/releases/versions/
+# SPINNAKER_VERSION=1.19.2
+SPINNAKER_VERSION=1.17.8
 curl -Os https://raw.githubusercontent.com/spinnaker/halyard/master/install/debian/InstallHalyard.sh
 sudo bash InstallHalyard.sh --user ubuntu
 curl -fsSL get.docker.com -o get-docker.sh
@@ -49,6 +51,6 @@ sudo echo "host: 0.0.0.0" |sudo tee \
 sudo hal deploy apply
 sudo systemctl daemon-reload
 sudo hal deploy connect
-printf " -------------------------------------------------------------- \n|     Connect here to spinnaker: http://192.168.33.10:9000/    |\n --------------------------------------------------------------"
+printf " -------------------------------------------------------------- \n|     Connect here to spinnaker: http://192.168.0.21:9000/    |\n --------------------------------------------------------------"
 sudo systemctl enable redis-server.service
 sudo systemctl start redis-server.service
