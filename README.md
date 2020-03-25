@@ -65,3 +65,8 @@ localhost:9000
 
 
 https://raw.githubusercontent.com/in4it/node-demo-app/master/demo-app.yml
+
+
+<br/>
+
+![Application](/img/pic2.png?raw=true)
