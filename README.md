@@ -61,12 +61,23 @@ localhost:9000
     $ cd spinnaker-course/scripts/
     $ ./6-restart-spinnaker.sh
 
-<br/>
-
-
-https://raw.githubusercontent.com/in4it/node-demo-app/master/demo-app.yml
-
 
 <br/>
 
 ![Application](/img/pic2.png?raw=true)
+
+<br/>
+
+![Application](/img/pic3.png?raw=true)
+
+<br/>
+
+![Application](/img/pic4.png?raw=true)
+
+<br/>
+
+https://raw.githubusercontent.com/in4it/node-demo-app/master/demo-app.yml
+
+<br/>
+
+![Application](/img/pic5.png?raw=true)
