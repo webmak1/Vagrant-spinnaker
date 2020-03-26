@@ -2,6 +2,10 @@
 
 <br/>
 
+### Local kubernetes + local spinnaker
+
+<br/>
+
 **Vagrantfile for 3 node cluster**
 
 https://github.com/webmakaka/vagrant-kubernetes-3-node-cluster-centos7
@@ -10,6 +14,11 @@ https://github.com/webmakaka/vagrant-kubernetes-3-node-cluster-centos7
 <br/>
 
 **Vagrant VM Network Settings fot Spinnaker**
+
+    $ vagrant plugin install vagrant-hostmanager
+
+    $ cd vagrant
+    $ vagrant up
 
 <br/>
 
@@ -56,10 +65,16 @@ localhost:9000
 
 <br/>
 
-    $ git clone https://github.com/webmakaka/spinnaker-course
-
-    $ cd spinnaker-course/scripts/
-    $ ./6-restart-spinnaker.sh
+    $ {
+        sudo systemctl restart apache2
+        sudo systemctl restart gate
+        sudo systemctl restart orca
+        sudo systemctl restart igor
+        sudo systemctl restart front50
+        sudo systemctl restart echo
+        sudo systemctl restart clouddriver
+        sudo systemctl restart rosco
+    }
 
 
 <br/>
@@ -81,3 +96,8 @@ https://raw.githubusercontent.com/in4it/node-demo-app/master/demo-app.yml
 <br/>
 
 ![Application](/img/pic5.png?raw=true)
+
+
+---
+
+<a href="https://marley.org"><strong>Marley</strong></a>
